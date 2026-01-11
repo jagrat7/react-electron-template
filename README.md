@@ -12,7 +12,7 @@
 
 ![Template Screenshot](./public/Screenshot_2026-01-10_23-19-56.png)
 
-## �🚀 Why This Template?
+## 🚀 Why This Template?
 
 Setting up a modern Electron app with current best tools and practices was **unnecessarily painful**. So I am putting this template out there to make it easier for others.
 
