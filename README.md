@@ -111,29 +111,6 @@ bunx --bun shadcn@latest add button
 bunx --bun shadcn@latest add card dialog input
 ```
 
-## 📜 Scripts
-
-| Command | Description |
-|---------|-------------|
-| `bun start` | 🟢 Start development with hot reload |
-| `bun run package` | 📦 Package app for current platform |
-| `bun run make` | 💿 Create distributable installers |
-| `bun run lint` | 🧹 Run ESLint |
-
----
-
-## 📦 Building for Production
-
-```bash
-# Package for current platform
-bun run package
-
-# Create installers (.deb, .rpm, .exe, .dmg)
-bun run make
-```
-
-Build artifacts will appear in the `out/` directory.
-
 ## 🗺️ Migration Guide (Regular React)
 
 Coming from a standard React project? Here's the map:
