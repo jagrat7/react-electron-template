@@ -30,7 +30,6 @@ Setting up a modern Electron app with current best tools and practices was **unn
 | **Styling** | 🎨 TailwindCSS | 4.x |
 | **Routing** | 🛣️ TanStack Router | 1.x |
 | **UI Components** | 🧱 shadcn/ui | latest |
-| **Icons** | 🎭 React Icons | latest |
 
 ## ✨ Features
 
