@@ -1,82 +1,88 @@
-# React Electron Template
+# ⚡️ React Electron Template
 
-A modern Electron starter template with the latest technologies, pre-configured and ready to use.
+> A modern, type-safe Electron starter template with the latest technologies, pre-configured and ready for production.
 
-## Why This Template?
+![Electron](https://img.shields.io/badge/Electron-39.x-47848F?style=flat&logo=electron&logoColor=white)
+![React](https://img.shields.io/badge/React-19.x-61DAFB?style=flat&logo=react&logoColor=black)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?style=flat&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=flat&logo=vite&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind-4.x-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
 
-Setting up a modern Electron app with current best practices is **unnecessarily painful**. You need to:
 
-- Configure Electron Forge with Vite
-- Set up React 19 with TypeScript
-- Integrate TailwindCSS v4 (new CSS-first config)
-- Add file-based routing
-- Configure path aliases
-- Set up dark mode theming
-- Add UI components
 
-This template does all of that for you. Clone it and start building.
+![Template Screenshot](./public/Screenshot_2026-01-10_23-19-56.png)
 
-## Tech Stack
+## �🚀 Why This Template?
+
+Setting up a modern Electron app with current best tools and practices was **unnecessarily painful**. So I am putting this template out there to make it easier for others.
+
+---
+
+## 🛠️ Tech Stack
 
 | Category | Technology | Version |
 |----------|------------|---------|
-| **Runtime** | Electron | 39.x |
-| **Framework** | React | 19.x |
-| **Language** | TypeScript | 5.x |
-| **Bundler** | Vite | 5.x |
-| **Build Tool** | Electron Forge | 7.x |
-| **Styling** | TailwindCSS | 4.x |
-| **Routing** | TanStack Router | 1.x |
-| **UI Components** | shadcn/ui | latest |
-| **Icons** | Lucide React | latest |
+| **Runtime** | ⚛️ Electron | 39.x |
+| **Framework** | 💙 React | 19.x |
+| **Language** | 📘 TypeScript | 5.x |
+| **Bundler** | ⚡ Vite | 5.x |
+| **Build Tool** | 🛠️ Electron Forge | 7.x |
+| **Styling** | 🎨 TailwindCSS | 4.x |
+| **Routing** | 🛣️ TanStack Router | 1.x |
+| **UI Components** | 🧱 shadcn/ui | latest |
+| **Icons** | 🎭 React Icons | latest |
 
-## Features
+## ✨ Features
 
-- **Dark Mode** - System-aware theme with light/dark/system toggle
-- **File-Based Routing** - Just create files in `src/routes/`
-- **Path Aliases** - Use `@/` or `~/` for clean imports
-- **shadcn/ui Ready** - Pre-configured, just add components
-- **Cross-Platform Builds** - Windows, macOS, Linux out of the box
-- **Hot Reload** - Fast development with Vite HMR
+- 🌗 **Dark Mode** - System-aware theme with built-in toggle
+- 📂 **File-Based Routing** - Create files in `src/routes/`, get routes automatically
+- 🔗 **Path Aliases** - Use `@/` or `~/` for clean, readable imports
+- 🧩 **shadcn/ui Ready** - Pre-configured components via CLI
+- 🖥️ **Cross-Platform** - Windows, macOS, Linux builds out of the box
+- 🔥 **Hot Reload** - Instant feedback with Vite HMR
 
-## Quick Start
+---
+
+## 🏁 Quick Start
 
 ```bash
 # Clone the template
 git clone https://github.com/yourusername/react-electron-template.git my-app
 cd my-app
 
-# Install dependencies
+# Install dependencies (using Bun is recommended 🥟)
 bun install
 
-# Start development
+# Start development 🚀
 bun start
 ```
 
-## Project Structure
+## 🏗️ Project Structure
 
 ```
 src/
-├── main.ts                 # Electron main process
-├── preload.ts              # Preload script (IPC bridge)
-├── renderer.tsx            # React entry point
-├── routeTree.gen.ts        # Auto-generated route tree
-├── routes/
-│   ├── __root.tsx          # App layout (like App.tsx)
-│   └── index.tsx           # Home page (/)
-├── components/
-│   ├── ui/                 # shadcn/ui components
-│   ├── theme-provider.tsx  # Dark mode context
-│   └── theme-toggle.tsx    # Theme switcher
-├── lib/
-│   └── utils.ts            # Utility functions (cn, etc.)
-└── styles/
-    └── global.css          # Tailwind + theme variables
+├── 🔌 main.ts                 # Electron main process
+├── 🌉 preload.ts              # Preload script (IPC bridge)
+├── ⚛️ renderer.tsx            # React entry point
+├── 🗺️ routeTree.gen.ts        # Auto-generated route tree
+├── 📂 routes/
+│   ├── __root.tsx             # App layout (like App.tsx)
+│   └── index.tsx              # Home page (/)
+├── 🧱 components/
+│   ├── ui/                    # shadcn/ui components
+│   ├── theme-provider.tsx     # Dark mode context
+│   └── theme-toggle.tsx       # Theme switcher
+├── 🔧 lib/
+│   └── utils.ts               # Utility functions (cn, etc.)
+└── 🎨 styles/
+    └── global.css             # Tailwind + theme variables
 ```
 
-## Adding Routes
+---
 
-Create a file in `src/routes/` and it becomes a route:
+## 🛣️ Adding Routes
+
+Simply create a file in `src/routes/` and it becomes a route!
 
 ```tsx
 // src/routes/settings.tsx → /settings
@@ -87,33 +93,36 @@ export const Route = createFileRoute('/settings')({
 })
 
 function Settings() {
-  return <div>Settings Page</div>
+  return <div>⚙️ Settings Page</div>
 }
 ```
 
-Nested routes:
-```
-src/routes/settings/index.tsx    → /settings
-src/routes/settings/profile.tsx  → /settings/profile
-```
+**Nested routes? Easy:**
 
-## Adding shadcn/ui Components
+- `src/routes/settings/index.tsx`    → `/settings`
+- `src/routes/settings/profile.tsx`  → `/settings/profile`
+
+## 🧱 Adding Components
+
+We use **shadcn/ui**. Add components via CLI:
 
 ```bash
 bunx --bun shadcn@latest add button
 bunx --bun shadcn@latest add card dialog input
 ```
 
-## Scripts
+## 📜 Scripts
 
 | Command | Description |
 |---------|-------------|
-| `bun start` | Start development with hot reload |
-| `bun run package` | Package app for current platform |
-| `bun run make` | Create distributable installers |
-| `bun run lint` | Run ESLint |
+| `bun start` | 🟢 Start development with hot reload |
+| `bun run package` | 📦 Package app for current platform |
+| `bun run make` | 💿 Create distributable installers |
+| `bun run lint` | 🧹 Run ESLint |
 
-## Building for Production
+---
+
+## 📦 Building for Production
 
 ```bash
 # Package for current platform
@@ -123,11 +132,11 @@ bun run package
 bun run make
 ```
 
-Output will be in the `out/` directory.
+Build artifacts will appear in the `out/` directory.
 
-## Mapping to Regular React
+## 🗺️ Migration Guide (Regular React)
 
-If you're coming from a standard React project:
+Coming from a standard React project? Here's the map:
 
 | Regular React | This Template |
 |--------------|---------------|
@@ -136,17 +145,17 @@ If you're coming from a standard React project:
 | `src/pages/Home.tsx` | `src/routes/index.tsx` |
 | `src/pages/About.tsx` | `src/routes/about.tsx` |
 
-The key difference: **file location = route path** (no manual route config needed).
+**Key Difference:** No manual router config—file location defines the route!
 
-## Configuration Files
+## ⚙️ Configuration Files
 
-- `forge.config.ts` - Electron Forge configuration
-- `vite.main.config.ts` - Vite config for main process
-- `vite.renderer.config.ts` - Vite config for renderer
-- `vite.preload.config.ts` - Vite config for preload
-- `tsconfig.json` - TypeScript configuration
-- `components.json` - shadcn/ui configuration
+- `forge.config.ts` - Electron Forge config
+- `vite.main.config.ts` - Main process Vite config
+- `vite.renderer.config.ts` - Renderer Vite config
+- `vite.preload.config.ts` - Preload Vite config
+- `tsconfig.json` - TypeScript config
+- `components.json` - shadcn/ui config
 
-## License
+## 📄 License
 
 MIT
