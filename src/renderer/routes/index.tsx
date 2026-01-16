@@ -7,12 +7,15 @@ import {
   SiVite,
 } from 'react-icons/si'
 import { TbRoute } from 'react-icons/tb'
+import { trpc } from '@/lib/trpc'
 
 export const Route = createFileRoute('/')({
   component: Index,
 })
 
 function Index() {
+  const { data } = trpc.health.useQuery()
+  console.log('tRPC health:', data)
   return (
     <div className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background text-foreground transition-colors duration-300 selection:bg-primary selection:text-primary-foreground">
       {/* Background Gradients & Pattern */}

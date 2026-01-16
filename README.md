@@ -31,6 +31,7 @@ Setting up a modern Electron app with current best tools and practices was **unn
 | **Routing** | 🛣️ TanStack Router | 1.x |
 | **UI Components** | 🧱 shadcn/ui | latest |
 | **Icons** | 🎭 React Icons | latest |
+| **API Layer** | ⚡ tRPC v11 | latest |
 
 
 ## 🏁 Quick Start
@@ -52,7 +53,11 @@ bun start
 ```
 src/
 ├── 🔌 main/
-│   └── main.ts                # Electron main process
+│   ├── main.ts                # Electron main process
+│   └── trpc/
+│       ├── context.ts         # tRPC context
+│       ├── router.ts          # App router
+│       └── trpc.ts            # tRPC init
 ├── 🌉 preload/
 │   └── preload.ts             # Preload script (IPC bridge)
 └── ⚛️ renderer/
@@ -66,6 +71,7 @@ src/
     │   ├── theme-provider.tsx  # Dark mode context
     │   └── theme-toggle.tsx    # Theme switcher
     ├── 🔧 lib/
+    │   ├── trpc.ts             # tRPC client + react-query
     │   └── utils.ts            # Utility functions (cn, etc.)
     └── 🎨 styles/
         └── global.css          # Tailwind + theme variables
@@ -103,6 +109,16 @@ We use **shadcn/ui**. Add components via CLI:
 bunx --bun shadcn@latest add button
 bunx --bun shadcn@latest add card dialog input
 ```
+
+## ⚡ tRPC (Electron v11)
+
+tRPC is wired up via **trpc-electron**. Entry points to review:
+
+- `src/main/trpc/*` (router + context)
+- `src/main/main.ts` (IPC handler in `app.whenReady()`)
+- `src/preload/preload.ts` (bridge)
+- `src/renderer/lib/trpc.ts` + `src/renderer/renderer.tsx` (client + providers)
+
 
 ## 🗺️ Migration Guide (Regular React)
 
