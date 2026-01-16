@@ -10,16 +10,19 @@ export default defineConfig({
     tanstackRouter({
       target: 'react',
       autoCodeSplitting: true,
-      routesDirectory: path.resolve(__dirname, './src/routes'),
-      generatedRouteTree: path.resolve(__dirname, './src/routeTree.gen.ts'),
+      routesDirectory: path.resolve(__dirname, './src/renderer/routes'),
+      generatedRouteTree: path.resolve(
+        __dirname,
+        './src/renderer/routeTree.gen.ts',
+      ),
     }),
     react(),
     tailwindcss(),
   ],
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
-      '~': path.resolve(__dirname, './src'),
+      '@': path.resolve(__dirname, './src/renderer'),
+      '~': path.resolve(__dirname, './src/renderer'),
     },
   },
 })

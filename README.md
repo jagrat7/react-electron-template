@@ -30,18 +30,7 @@ Setting up a modern Electron app with current best tools and practices was **unn
 | **Styling** | 🎨 TailwindCSS | 4.x |
 | **Routing** | 🛣️ TanStack Router | 1.x |
 | **UI Components** | 🧱 shadcn/ui | latest |
-| **Icons** | 🎭 React Icons | latest |
 
-## ✨ Features
-
-- 🌗 **Dark Mode** - System-aware theme with built-in toggle
-- 📂 **File-Based Routing** - Create files in `src/routes/`, get routes automatically
-- 🔗 **Path Aliases** - Use `@/` or `~/` for clean, readable imports
-- 🧩 **shadcn/ui Ready** - Pre-configured components via CLI
-- 🖥️ **Cross-Platform** - Windows, macOS, Linux builds out of the box
-- 🔥 **Hot Reload** - Instant feedback with Vite HMR
-
----
 
 ## 🏁 Quick Start
 
@@ -131,30 +120,6 @@ bun run package
 # Create installers (.deb, .rpm, .exe, .dmg)
 bun run make
 ```
-
-Build artifacts will appear in the `out/` directory.
-
-## 🗺️ Migration Guide (Regular React)
-
-Coming from a standard React project? Here's the map:
-
-| Regular React | This Template |
-|--------------|---------------|
-| `src/main.tsx` | `src/renderer.tsx` |
-| `src/App.tsx` | `src/routes/__root.tsx` |
-| `src/pages/Home.tsx` | `src/routes/index.tsx` |
-| `src/pages/About.tsx` | `src/routes/about.tsx` |
-
-**Key Difference:** No manual router config—file location defines the route!
-
-## ⚙️ Configuration Files
-
-- `forge.config.ts` - Electron Forge config
-- `vite.main.config.ts` - Main process Vite config
-- `vite.renderer.config.ts` - Renderer Vite config
-- `vite.preload.config.ts` - Preload Vite config
-- `tsconfig.json` - TypeScript config
-- `components.json` - shadcn/ui config
 
 ## 📄 License
 
