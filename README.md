@@ -8,7 +8,7 @@
 ![Vite](https://img.shields.io/badge/Vite-5.x-646CFF?style=flat&logo=vite&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind-4.x-06B6D4?style=flat&logo=tailwindcss&logoColor=white)
 
-
+## 🖼️ Preview
 
 ![Template Screenshot](./public/Screenshot_2026-01-10_23-19-56.png)
 
@@ -30,6 +30,7 @@ Setting up a modern Electron app with current best tools and practices was **unn
 | **Styling** | 🎨 TailwindCSS | 4.x |
 | **Routing** | 🛣️ TanStack Router | 1.x |
 | **UI Components** | 🧱 shadcn/ui | latest |
+| **Icons** | 🎭 React Icons | latest |
 
 
 ## 🏁 Quick Start
@@ -50,31 +51,34 @@ bun start
 
 ```
 src/
-├── 🔌 main.ts                 # Electron main process
-├── 🌉 preload.ts              # Preload script (IPC bridge)
-├── ⚛️ renderer.tsx            # React entry point
-├── 🗺️ routeTree.gen.ts        # Auto-generated route tree
-├── 📂 routes/
-│   ├── __root.tsx             # App layout (like App.tsx)
-│   └── index.tsx              # Home page (/)
-├── 🧱 components/
-│   ├── ui/                    # shadcn/ui components
-│   ├── theme-provider.tsx     # Dark mode context
-│   └── theme-toggle.tsx       # Theme switcher
-├── 🔧 lib/
-│   └── utils.ts               # Utility functions (cn, etc.)
-└── 🎨 styles/
-    └── global.css             # Tailwind + theme variables
+├── 🔌 main/
+│   └── main.ts                # Electron main process
+├── 🌉 preload/
+│   └── preload.ts             # Preload script (IPC bridge)
+└── ⚛️ renderer/
+    ├── renderer.tsx           # React entry point
+    ├── routeTree.gen.ts       # Auto-generated route tree
+    ├── 📂 routes/
+    │   ├── __root.tsx          # App layout (like App.tsx)
+    │   └── index.tsx           # Home page (/)
+    ├── 🧱 components/
+    │   ├── ui/                 # shadcn/ui components
+    │   ├── theme-provider.tsx  # Dark mode context
+    │   └── theme-toggle.tsx    # Theme switcher
+    ├── 🔧 lib/
+    │   └── utils.ts            # Utility functions (cn, etc.)
+    └── 🎨 styles/
+        └── global.css          # Tailwind + theme variables
 ```
 
 ---
 
 ## 🛣️ Adding Routes
 
-Simply create a file in `src/routes/` and it becomes a route!
+Simply create a file in `src/renderer/routes/` and it becomes a route!
 
 ```tsx
-// src/routes/settings.tsx → /settings
+// src/renderer/routes/settings.tsx → /settings
 import { createFileRoute } from '@tanstack/react-router'
 
 export const Route = createFileRoute('/settings')({
@@ -88,8 +92,8 @@ function Settings() {
 
 **Nested routes? Easy:**
 
-- `src/routes/settings/index.tsx`    → `/settings`
-- `src/routes/settings/profile.tsx`  → `/settings/profile`
+- `src/renderer/routes/settings/index.tsx`    → `/settings`
+- `src/renderer/routes/settings/profile.tsx`  → `/settings/profile`
 
 ## 🧱 Adding Components
 
@@ -106,10 +110,10 @@ Coming from a standard React project? Here's the map:
 
 | Regular React | This Template |
 |--------------|---------------|
-| `src/main.tsx` | `src/renderer.tsx` |
-| `src/App.tsx` | `src/routes/__root.tsx` |
-| `src/pages/Home.tsx` | `src/routes/index.tsx` |
-| `src/pages/About.tsx` | `src/routes/about.tsx` |
+| `src/main.tsx` | `src/renderer/renderer.tsx` |
+| `src/App.tsx` | `src/renderer/routes/__root.tsx` |
+| `src/pages/Home.tsx` | `src/renderer/routes/index.tsx` |
+| `src/pages/About.tsx` | `src/renderer/routes/about.tsx` |
 
 **Key Difference:** No manual router config—file location defines the route!
 
