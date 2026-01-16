@@ -12,7 +12,7 @@
 
 ![Template Screenshot](./public/Screenshot_2026-01-10_23-19-56.png)
 
-## �🚀 Why This Template?
+## 🚀 Why This Template?
 
 Setting up a modern Electron app with current best tools and practices was **unnecessarily painful**. So I am putting this template out there to make it easier for others.
 
@@ -100,26 +100,27 @@ bunx --bun shadcn@latest add button
 bunx --bun shadcn@latest add card dialog input
 ```
 
-## 📜 Scripts
+## 🗺️ Migration Guide (Regular React)
 
-| Command | Description |
-|---------|-------------|
-| `bun start` | 🟢 Start development with hot reload |
-| `bun run package` | 📦 Package app for current platform |
-| `bun run make` | 💿 Create distributable installers |
-| `bun run lint` | 🧹 Run ESLint |
+Coming from a standard React project? Here's the map:
 
----
+| Regular React | This Template |
+|--------------|---------------|
+| `src/main.tsx` | `src/renderer.tsx` |
+| `src/App.tsx` | `src/routes/__root.tsx` |
+| `src/pages/Home.tsx` | `src/routes/index.tsx` |
+| `src/pages/About.tsx` | `src/routes/about.tsx` |
 
-## 📦 Building for Production
+**Key Difference:** No manual router config—file location defines the route!
 
-```bash
-# Package for current platform
-bun run package
+## ⚙️ Configuration Files
 
-# Create installers (.deb, .rpm, .exe, .dmg)
-bun run make
-```
+- `forge.config.ts` - Electron Forge config
+- `vite.main.config.ts` - Main process Vite config
+- `vite.renderer.config.ts` - Renderer Vite config
+- `vite.preload.config.ts` - Preload Vite config
+- `tsconfig.json` - TypeScript config
+- `components.json` - shadcn/ui config
 
 ## 📄 License
 
