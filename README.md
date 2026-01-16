@@ -112,7 +112,7 @@ bunx --bun shadcn@latest add card dialog input
 
 ## ⚡ tRPC (Electron v11)
 
-tRPC is wired up via **trpc-electron**. Entry points to review:
+tRPC is wired up via **trpc-electron**. All new routes will be defined in router file. Entry points to review:
 
 - `src/main/trpc/*` (router + context)
 - `src/main/main.ts` (IPC handler in `app.whenReady()`)
