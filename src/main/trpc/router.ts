@@ -1,8 +1,9 @@
 import { inferRouterInputs, inferRouterOutputs } from '@trpc/server'
 import { trpc } from './trpc'
+import { health } from './routes/health'
 
 export const appRouter = trpc.router({
-  health: trpc.procedure.query(() => ({ status: 'ok' })),
+  health,
 })
 
 export type AppRouter = typeof appRouter

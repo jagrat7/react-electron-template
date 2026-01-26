@@ -10,7 +10,7 @@
 
 ## 🖼️ Preview
 
-![Template Screenshot](./public/Screenshot_2026-01-10_23-19-56.png)
+![Template Screenshot](./assets/Screenshot_2026-01-10_23-19-56.png)
 
 ## 🚀 Why This Template?
 
