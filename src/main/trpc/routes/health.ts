@@ -1,3 +1,5 @@
 import { trpc } from '../trpc'
 
-export const health = trpc.procedure.query(() => ({ status: 'ok' }))
+export const health = trpc.router({
+  status: trpc.procedure.query(() => ({ status: 'ok' })),
+})
