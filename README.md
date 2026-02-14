@@ -30,7 +30,6 @@ Setting up a modern Electron app with current best tools and practices was **unn
 | **Styling** | 🎨 TailwindCSS | 4.x |
 | **Routing** | 🛣️ TanStack Router | 1.x |
 | **UI Components** | 🧱 shadcn/ui | latest |
-| **Icons** | 🎭 React Icons | latest |
 | **API Layer** | ⚡ tRPC v11 | latest |
 
 
@@ -103,7 +102,7 @@ function Settings() {
 - `src/renderer/routes/settings/index.tsx`    → `/settings`
 - `src/renderer/routes/settings/profile.tsx`  → `/settings/profile`
 
-## ⚡ Adding tRPC Routes
+## ⚡ Adding tRPC "API" Routes
 
 Create a file in `src/main/trpc/routes/` and merge it into the app router:
 
