@@ -14,7 +14,7 @@
 
 ## 🚀 Why This Template?
 
-Setting up a modern Electron app with current best tools and practices was **unnecessarily painful**. So I am putting this template out there to make it easier for others.
+Setting up a modern Electron app with current best tools and practices was **unnecessarily painful**. So I am putting this template out there to make it easier for others. It uses tanstack router for Next.js like app routing in the renderer process and tRPC for a type-safe API layer in the main process to simplify the whole preloader and ipc communication.
 
 ---
 
@@ -57,7 +57,9 @@ src/
 │   └── trpc/
 │       ├── context.ts         # tRPC context
 │       ├── router.ts          # App router
-│       └── trpc.ts            # tRPC init
+│       ├── trpc.ts            # tRPC init
+│       └── routes/
+│           └── health.ts      # Health check route
 ├── 🌉 preload/
 │   └── preload.ts             # Preload script (IPC bridge)
 └── ⚛️ renderer/
@@ -79,7 +81,7 @@ src/
 
 ---
 
-## 🛣️ Adding Routes
+## 🛣️ Adding React Routes/"Pages"
 
 Simply create a file in `src/renderer/routes/` and it becomes a route!
 
@@ -100,6 +102,36 @@ function Settings() {
 
 - `src/renderer/routes/settings/index.tsx`    → `/settings`
 - `src/renderer/routes/settings/profile.tsx`  → `/settings/profile`
+
+## ⚡ Adding tRPC Routes
+
+Create a file in `src/main/trpc/routes/` and merge it into the app router:
+
+```ts
+// src/main/trpc/routes/users.ts
+import { trpc } from '../trpc'
+
+export const users = trpc.router({
+  list: trpc.procedure.query(() => [{ id: 1, name: 'Alice' }]),
+})
+```
+
+Then register it in `src/main/trpc/router.ts`:
+
+```ts
+import { users } from './routes/users'
+
+export const appRouter = trpc.router({
+  health,
+  users,
+})
+```
+
+Call it from the renderer:
+
+```ts
+const { data } = trpc.users.list.useQuery()
+```
 
 ## 🧱 Adding Components
 
