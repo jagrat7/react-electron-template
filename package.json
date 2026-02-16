@@ -11,7 +11,22 @@
     "publish": "electron-forge publish",
     "lint": "eslint --ext .ts,.tsx ."
   },
-  "keywords": [],
+  "keywords": [
+    "electron",
+    "react",
+    "typescript",
+    "vite",
+    "tailwindcss",
+    "tanstack-router",
+    "trpc",
+    "shadcn-ui",
+    "electron-forge",
+    "desktop-app",
+    "electron-template",
+    "react-template",
+    "starter-template",
+    "boilerplate"
+  ],
   "author": {
     "name": "jagrat7",
     "email": "jagratrao@gmail.com"
